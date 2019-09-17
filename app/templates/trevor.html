@@ -1,0 +1,32 @@
+{{ define "title" }}Trevor{{ end }}
+
+{{ define "content" }}
+	<article>
+		<header>
+			<h1>Trevor</h1>
+			<nav>
+				<a href="#work-projects" title="Work Projects">Work Projects</a>
+				<a href="#home-projects" title="Home Projects">Home Projects</a>
+				<a href="#favs" title="Fav Fam">Fav Fam</a>
+			</nav>
+		</header>
+		<section>
+			<header>
+				<h2>Work</h2>
+			</header>
+			<main>
+				{{ range .WorkProjects }}
+					<article>
+						<h3>{{ .Title }}</h3>
+						<p>{{ .Description }}</p>
+						<a
+							href="{{ .URL }}"
+							title="View More"
+							target="_blank">
+							View More</a>
+					</article>
+				{{ end }}
+			</main>
+		</section>
+	</article>
+{{ end }}

@@ -1,0 +1,48 @@
+body > main > article > section {
+	@include space($spacing-md);
+	@include pad($spacing-sm);
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: $screen-sm-min) {
+		@include space($spacing-lg);
+	}
+
+	> header {
+		@include space($spacing-sm);
+		justify-self: flex-start;
+		text-align: center;
+
+		> h2 {
+			@include font("heading-lg");
+		}
+	}
+
+	> main {
+		@include space($spacing-sm);
+		flex-grow: 2;
+
+		> article {
+			@include listMargin($spacing-md);
+
+			> h3 {
+				@include font("heading-sm");
+			}
+
+			> p {
+				margin-top: $spacing-xs;
+			}
+
+			> a {
+				display: block;
+				margin-top: $spacing-xs;
+			}
+		}
+	}
+
+	> footer {
+		@include space($spacing-sm);
+		justify-self: flex-end;
+		text-align: center;
+	}
+}
